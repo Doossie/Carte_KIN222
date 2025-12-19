@@ -21,62 +21,78 @@
   />
 
   <style>
-    body {
-      margin: 0;
-    }
-    #map {
-      height: 100vh;
-      width: 100vw;
-    }
+    body { margin: 0; }
+    #map { height: 100vh; width: 100vw; }
   </style>
 </head>
 <body>
 
-  <div id="map"></div>
+<div id="map"></div>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- MarkerCluster JS -->
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<!-- MarkerCluster JS -->
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
-  <!-- Script principal -->
-  <script>
-    // 1️⃣ Initialisation de la carte (UNE SEULE FOIS)
-    const map = L.map('map').setView([46.5, 2.5], 6);
+<script>
+  // 1️⃣ Initialisation de la carte
+  const map = L.map('map').setView([46.5, 2.5], 5);
 
-    // 2️⃣ Fond de carte
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap'
-    }).addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
 
-    // 3️⃣ Groupe de clusters
-    const markers = L.markerClusterGroup();
+  const markers = L.markerClusterGroup();
 
-    // 4️⃣ Chargement des données
-    fetch('data.json')
-      .then(response => response.json())
-      .then(data => {
-        data.forEach(person => {
+  // 2️⃣ Fonction de géocodage (ville → coordonnées)
+  async function geocodeCity(city) {
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city)}`;
 
-          // Sécurité : forcer les nombres
-          const lat = Number(person.lat);
-          const lng = Number(person.lng);
+    const response = await fetch(url, {
+      headers: {
+        "Accept": "application/json"
+      }
+    });
 
-          // Création du marker
-          const marker = L.marker([lat, lng])
-            .bindPopup(`<b>${person.name}</b><br>${person.city}`);
+    const results = await response.json();
 
-          markers.addLayer(marker);
-        });
+    if (results.length === 0) return null;
 
-        // Ajout des clusters à la carte
-        map.addLayer(markers);
-      })
-      .catch(error => {
-        console.error("Erreur de chargement de data.json :", error);
-      });
-  </script>
+    return {
+      lat: Number(results[0].lat),
+      lng: Number(results[0].lon)
+    };
+  }
+
+  // 3️⃣ Chargement des données
+  fetch('data.json')
+    .then(response => response.json())
+    .then(async data => {
+
+      for (const person of data) {
+        const coords = await geocodeCity(person.city);
+
+        if (!coords) {
+          console.warn("Ville non trouvée :", person.city);
+          continue;
+        }
+
+        const marker = L.marker([coords.lat, coords.lng])
+          .bindPopup(`<b>${person.name}</b><br>${person.city}`);
+
+        markers.addLayer(marker);
+
+        // Petite pause pour respecter Nominatim
+        await new Promise(r => setTimeout(r, 500));
+      }
+
+      map.addLayer(markers);
+    })
+    .catch(err => {
+      console.error("Erreur :", err);
+    });
+</script>
 
 </body>
 </html>
