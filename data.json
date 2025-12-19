@@ -1,25 +1,31 @@
 [
-  { "name": "Clément","city": "Paris 14e, France" },
-  { "name": "Manon","city": "Paris 14e, France" },
-  { "name": "Nicolas","city": "cité universitaire Paris 14e, France" },
-  {
-    "name": "Tom",
-    "city": "Aix-en-provence, France"
-  },
-  {
-    "name": "Orane",
-    "city": "Paris 14e, France"
-  },
-  {
-    "name": "Quentin",
-    "city": "Nevers, France"
-  },
-  {
-    "name": "Tomy",
-    "city": "Marseille, France"
-  },
-  {
-    "name": "Salomé",
-    "city": "Montrouge, France"
-  }
+  { "name": "Clément Sinard","city": "cité universitaire Paris 14e, France" },
+  { "name": "Manon Jaulgey","city": "cité universitaire Paris 14e, France" },
+  { "name": "Nicolas Petit","city": "cité universitaire Paris 14e, France" },
+  { "name": "César Marie","city": "cité universitaire Paris 14e, France" },
+  { "name": "Baptiste Guillemin","city": "cité universitaire Paris 14e, France" },
+  { "name": "Gaspard Rique","city": "cité universitaire Paris 14e, France" },
+  { "name": "Orane Zaouali","city": "cité universitaire Paris 14e, France" },
+
+  { "name": "Gwenaelle Lebreton","city": "trocadéro Paris 16e, France" },
+  
+  { "name": "Salomé Azulay","city": "Montrouge, France"}
+  
+  
+  { "name": "Tom Couvé-Bonnaire","city": "Aix-en-provence, France" },
+  { "name": "Tomy Villaverde","city": "Marseille, France" },
+  
+  { "name": "Quentin Grimaldi","city": "Nevers, France" },
+
+  { "name": "Flavie Maunoury","city": "Villefranche-sur-Saône, France" },
+
+  { "name": "Marie Janiszewsky","city": "Quebec, Canada" },
+  { "name": "Malo Guemas","city": "Scherbrook, Canada" },
+  { "name": "Emma Alix","city": "Montréal, Canada" },
+  { "name": "Nathan Cartier","city": "Montréal, Canada" },
+  { "name": "Aymeric Tingry","city": "Montréal, Canada" },
+  { "name": "Paul Morand","city": "Montréal, Canada" },
+  { "name": "Sabri Larbaoui","city": "Bilbao, Espagne" },
+  
+  
 ]
