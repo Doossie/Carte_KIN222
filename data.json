@@ -1,6 +1,6 @@
 [
-  {"name": "Clément","city": "Paris 14e, France"},
-  {"name": "Nicolas","city": "Paris 14e, France"},
+  { "name": "Clément","city": "Paris 14e, France" },
+  { "name": "Nicolas","city": "Paris 14e, France" },
   {
     "name": "Tom",
     "city": "Aix-en-provence, France"
