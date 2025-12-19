@@ -1,10 +1,26 @@
 [
   {
     "name": "Clément",
-    "city": "Paris 11e, France"
+    "city": "Paris 14e, France"
   },
   {
-    "name": "Julie",
-    "city": "Lyon, France"
+    "name": "Tom",
+    "city": "Aix-en-provence, France"
+  },
+  {
+    "name": "Orane",
+    "city": "Paris 14e, France"
+  },
+  {
+    "name": "Quentin",
+    "city": "Nevers, France"
+  },
+  {
+    "name": "Tomy",
+    "city": "Marseille, France"
+  },
+  {
+    "name": "Salomé",
+    "city": "Montrouge, France"
   }
 ]
