@@ -1,14 +1,10 @@
 [
- {
-  "name": "Clément",
-  "city": "Paris",
-  "lat": 48.8566,
-  "lng": 2.3522
- },
- {
-  "name": "Julie",
-  "city": "Lyon",
-  "lat": 45.7640,
-  "lng": 4.8357
- }
+  {
+    "name": "Clément",
+    "city": "Paris 11e, France"
+  },
+  {
+    "name": "Julie",
+    "city": "Lyon, France"
+  }
 ]
