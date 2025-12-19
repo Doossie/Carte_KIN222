@@ -24,7 +24,6 @@
     body { margin: 0; }
     #map { height: 100vh; width: 100vw; }
 
-    /* Style des prénoms */
     .leaflet-tooltip {
       background: rgba(255,255,255,0.9);
       border: none;
@@ -33,6 +32,18 @@
       font-size: 13px;
       font-weight: 600;
       padding: 4px 8px;
+    }
+
+    /* Style du cluster personnalisé */
+    .custom-cluster div {
+      background-color: #3f51b5;
+      color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -56,13 +67,24 @@
     attribution: '© OpenStreetMap'
   }).addTo(map);
 
-  const markers = L.markerClusterGroup();
+  // ===============================
+  // 2️⃣ Création du cluster group
+  // ===============================
+  const markers = L.markerClusterGroup({
+    iconCreateFunction: function(cluster) {
+      const n = cluster.getAllChildMarkers().length;
+      return L.divIcon({
+        html: `<div>${n}</div>`,
+        className: 'custom-cluster',
+        iconSize: [30, 30]
+      });
+    }
+  });
 
   // ===============================
-  // 2️⃣ Affichage des prénoms au zoom
+  // 3️⃣ Affichage des tooltips au zoom
   // ===============================
   const ZOOM_LABELS = 11;
-
   map.on('zoomend', () => {
     const show = map.getZoom() >= ZOOM_LABELS;
     markers.eachLayer(layer => {
@@ -73,7 +95,7 @@
   });
 
   // ===============================
-  // 3️⃣ Chargement des données
+  // 4️⃣ Chargement des données
   // ===============================
   fetch("data.json")
     .then(r => r.json())
@@ -97,7 +119,23 @@
       });
 
       map.addLayer(markers);
-      map.fire("zoomend"); // force l'affichage des tooltips si zoom déjà haut
+
+      // Quand on clique sur un cluster, afficher la liste des personnes
+      markers.on('clusterclick', function(a) {
+        const children = a.layer.getAllChildMarkers();
+        let html = '<b>Liste des personnes :</b><ul>';
+        children.forEach(m => {
+          html += `<li>${m.getTooltip().getContent()}</li>`;
+        });
+        html += '</ul>';
+
+        L.popup()
+          .setLatLng(a.layer.getLatLng())
+          .setContent(html)
+          .openOn(map);
+      });
+
+      map.fire("zoomend");
     })
     .catch(err => console.error("Erreur chargement data.json :", err));
 </script>
