@@ -1,14 +1,14 @@
 [
  {
-  "Nom": "Clément",
-  "Ville": "Paris",
-  "Lat": "48.8566",
-  "Lng": "2.3522"
+  "name": "Clément",
+  "city": "Paris",
+  "lat": 48.8566,
+  "lng": 2.3522
  },
  {
-  "Nom": "Julie",
-  "Ville": "Lyon",
-  "Lat": "45.7640",
-  "Lng": "4.8357"
+  "name": "Julie",
+  "city": "Lyon",
+  "lat": 45.7640,
+  "lng": 4.8357
  }
 ]
