@@ -1,29 +1,82 @@
-<script>
-  // Initialisation de la carte (UNE SEULE FOIS)
-  const map = L.map('map').setView([46.5, 2.5], 6);
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Carte de la promo</title>
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap'
-  }).addTo(map);
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
 
-  // Groupe de clusters
-  const markers = L.markerClusterGroup();
+  <!-- MarkerCluster CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+  />
 
-  // Chargement des données
-  fetch('data.json')
-    .then(res => res.json())
-    .then(data => {
-      data.forEach(person => {
-        const marker = L.marker([
-          Number(person.lat),
-          Number(person.lng)
-        ]).bindPopup(`<b>${person.name}</b><br>${person.city}`);
+  <style>
+    body {
+      margin: 0;
+    }
+    #map {
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
 
-        markers.addLayer(marker);
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- MarkerCluster JS -->
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- Script principal -->
+  <script>
+    // 1️⃣ Initialisation de la carte (UNE SEULE FOIS)
+    const map = L.map('map').setView([46.5, 2.5], 6);
+
+    // 2️⃣ Fond de carte
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // 3️⃣ Groupe de clusters
+    const markers = L.markerClusterGroup();
+
+    // 4️⃣ Chargement des données
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(person => {
+
+          // Sécurité : forcer les nombres
+          const lat = Number(person.lat);
+          const lng = Number(person.lng);
+
+          // Création du marker
+          const marker = L.marker([lat, lng])
+            .bindPopup(`<b>${person.name}</b><br>${person.city}`);
+
+          markers.addLayer(marker);
+        });
+
+        // Ajout des clusters à la carte
+        map.addLayer(markers);
+      })
+      .catch(error => {
+        console.error("Erreur de chargement de data.json :", error);
       });
+  </script>
 
-      map.addLayer(markers);
-    });
-</script>
-
-
+</body>
+</html>
