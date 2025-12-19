@@ -1,31 +1,29 @@
 [
-  { "name": "Clément Sinard","city": "cité universitaire Paris 14e, France" },
-  { "name": "Manon Jaulgey","city": "cité universitaire Paris 14e, France" },
-  { "name": "Nicolas Petit","city": "cité universitaire Paris 14e, France" },
-  { "name": "César Marie","city": "cité universitaire Paris 14e, France" },
-  { "name": "Baptiste Guillemin","city": "cité universitaire Paris 14e, France" },
-  { "name": "Gaspard Rique","city": "cité universitaire Paris 14e, France" },
-  { "name": "Orane Zaouali","city": "cité universitaire Paris 14e, France" },
+  { "name": "Clément Sinard", "city": "cité universitaire Paris 14e, France", "lat": 48.8283, "lng": 2.3350 },
+  { "name": "Manon Jaulgey", "city": "cité universitaire Paris 14e, France", "lat": 48.8283, "lng": 2.3350 },
+  { "name": "Nicolas Petit", "city": "cité universitaire Paris 14e, France", "lat": 48.8283, "lng": 2.3350 },
+  { "name": "César Marie", "city": "cité universitaire Paris 14e, France", "lat": 48.8283, "lng": 2.3350 },
+  { "name": "Baptiste Guillemin", "city": "cité universitaire Paris 14e, France", "lat": 48.8283, "lng": 2.3350 },
+  { "name": "Gaspard Rique", "city": "cité universitaire Paris 14e, France", "lat": 48.8283, "lng": 2.3350 },
+  { "name": "Orane Zaouali", "city": "cité universitaire Paris 14e, France", "lat": 48.8283, "lng": 2.3350 },
 
-  { "name": "Gwenaelle Lebreton","city": "trocadéro Paris 16e, France" },
-  
-  { "name": "Salomé Azulay","city": "Montrouge, France"}
-  
-  
-  { "name": "Tom Couvé-Bonnaire","city": "Aix-en-provence, France" },
-  { "name": "Tomy Villaverde","city": "Marseille, France" },
-  
-  { "name": "Quentin Grimaldi","city": "Nevers, France" },
+  { "name": "Gwenaelle Lebreton", "city": "trocadéro Paris 16e, France", "lat": 48.8625, "lng": 2.2883 },
 
-  { "name": "Flavie Maunoury","city": "Villefranche-sur-Saône, France" },
+  { "name": "Salomé Azulay", "city": "Montrouge, France", "lat": 48.8150, "lng": 2.3180 },
 
-  { "name": "Marie Janiszewsky","city": "Quebec, Canada" },
-  { "name": "Malo Guemas","city": "Scherbrook, Canada" },
-  { "name": "Emma Alix","city": "Montréal, Canada" },
-  { "name": "Nathan Cartier","city": "Montréal, Canada" },
-  { "name": "Aymeric Tingry","city": "Montréal, Canada" },
-  { "name": "Paul Morand","city": "Montréal, Canada" },
-  { "name": "Sabri Larbaoui","city": "Bilbao, Espagne" },
-  
-  
+  { "name": "Tom Couvé-Bonnaire", "city": "Aix-en-Provence, France", "lat": 43.5297, "lng": 5.4474 },
+  { "name": "Tomy Villaverde", "city": "Marseille, France", "lat": 43.2965, "lng": 5.3698 },
+
+  { "name": "Quentin Grimaldi", "city": "Nevers, France", "lat": 46.9896, "lng": 3.1590 },
+
+  { "name": "Flavie Maunoury", "city": "Villefranche-sur-Saône, France", "lat": 46.0658, "lng": 4.7172 },
+
+  { "name": "Marie Janiszewsky", "city": "Quebec, Canada", "lat": 46.8139, "lng": -71.2082 },
+  { "name": "Malo Guemas", "city": "Scherbrook, Canada", "lat": 46.8000, "lng": -71.2500 },
+  { "name": "Emma Alix", "city": "Montréal, Canada", "lat": 45.5017, "lng": -73.5673 },
+  { "name": "Nathan Cartier", "city": "Montréal, Canada", "lat": 45.5017, "lng": -73.5673 },
+  { "name": "Aymeric Tingry", "city": "Montréal, Canada", "lat": 45.5017, "lng": -73.5673 },
+  { "name": "Paul Morand", "city": "Montréal, Canada", "lat": 45.5017, "lng": -73.5673 },
+
+  { "name": "Sabri Larbaoui", "city": "Bilbao, Espagne", "lat": 43.2630, "lng": -2.9349 }
 ]
