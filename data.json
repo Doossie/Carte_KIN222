@@ -23,7 +23,7 @@
   { "name": "Nicolas Carmona", "city": "Nice", "lat": 43.7102, "lng": 7.2620 },
   { "name": "Estelle Carton", "city": "Grenoble", "lat": 45.1885, "lng": 5.7245 },
   { "name": "Marie Chabert", "city": "Paris", "lat": 48.8566, "lng": 2.3522 },
-  { "name": "Vincent Chardès", "city": "Toulouse", "lat": 43.6047, "lng": 1.4442 },
+  { "name": "Vincent Chardès", "city": "Madrid", "lat": 40.4168, "lng": -3.7038 },
   { "name": "Alexandros Chatziioannou", "city": "Lyon", "lat": 45.7640, "lng": 4.8357 },
   { "name": "Matheo Cordonnier", "city": "Marseille", "lat": 43.2965, "lng": 5.3698 },
   { "name": "Gabriel Coulombe", "city": "Nancy", "lat": 48.6921, "lng": 6.1844 },
@@ -47,7 +47,7 @@
   { "name": "Agathe Frémont", "city": "Marseille", "lat": 43.2965, "lng": 5.3698 },
   { "name": "Noan Girault", "city": "Levallois-Perret", "lat": 48.8932, "lng": 2.2871 },
   { "name": "Quentin Grimaldi", "city": "La Ciotat", "lat": 43.1748, "lng": 5.6045 },
-  { "name": "Malo Guemas", "city": "Paris", "lat": 48.8566, "lng": 2.3522 },
+  { "name": "Malo Guemas", "city": "Paris XV", "lat": 48.8414, "lng": 2.2988 },
   { "name": "Charpentier Guillaume", "city": "Paris", "lat": 48.8566, "lng": 2.3522 },
   { "name": "Baptiste Guillemin", "city": "Auch", "lat": 43.6464, "lng": 0.5850 },
   { "name": "Raphael Hiblot-Lhoste", "city": "Poitiers", "lat": 46.5802, "lng": 0.3404 },
@@ -107,5 +107,6 @@
   { "name": "Doryan Vinet", "city": "Paris", "lat": 48.8566, "lng": 2.3522 },
   { "name": "Florent Wurtz", "city": "Nice", "lat": 43.7102, "lng": 7.2620 },
   { "name": "Orane Zaouali", "city": "Paris XV", "lat": 48.8414, "lng": 2.2988 },
-  { "name": "Jules Zénone", "city": "Paris", "lat": 48.8566, "lng": 2.3522 }
+  { "name": "Jules Zénone", "city": "Paris", "lat": 48.8566, "lng": 2.3522 },
+  { "name": "Nicolas Petit", "city": "Aix-en-Provence", "lat": 43.5297, "lng": 5.4474 }
 ]
